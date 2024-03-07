@@ -14,3 +14,6 @@ class MongoManager():
         '''Disconnect from Mongo'''
         client.close()
         return {'message':'Client closed'}
+    
+    def query_to_mongo(self,client, collection,query):
+        '''Query the mongo DB for data'''
