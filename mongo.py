@@ -17,3 +17,8 @@ class MongoManager():
     
     def query_to_mongo(self,client, collection,query):
         '''Query the mongo DB for data'''
+        col_name = client['Indi-Moda-development'][collection]
+        data = list(col_name.aggregate(query))
+        print(data)
+        self.disconnect_from_mongo(client)
+        return data
